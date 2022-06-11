@@ -1,0 +1,25 @@
+{% extends "common/layout.html" %}
+{% block content %}
+<h2>welcome here 09</h2>
+<h4>{{name}}</h4>
+<p>
+    {% if user %}
+    {{user.nickname}} 联系方式：{{user.qq}} 主页：{{ user.home_page }}
+    {% endif %}
+</p>
+
+<hr>
+<p>
+    {% for num in num_list%}
+    {{num}}
+    {% endfor %}
+</p>
+
+<hr>
+<h3>flask 查询数据库</h3>
+<p>
+    {% for item in result %}
+    {{item['User']}}
+    {% endfor %}
+</p>
+{% endblock %}
