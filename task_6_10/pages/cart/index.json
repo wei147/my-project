@@ -1,3 +1,11 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "l-tabs":"../../miniprogram_npm/lin-ui/tabs",
+    "l-tabpanel":"../../miniprogram_npm/lin-ui/tabpanel",
+    "l-card":"../../miniprogram_npm/lin-ui/card",
+    "l-icon":"../../miniprogram_npm/lin-ui/icon",
+    "l-tag":"../../miniprogram_npm/lin-ui/tag"
+  }
+
 }
+

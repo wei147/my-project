@@ -1,2 +1,32 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<l-tabs bind:linchange="changeTabs">
+  <l-tabpanel tab="京东物流" key="one" slot="one">
+    <view class="tab-content">京东物流</view>
+    <l-card  type="primary" 
+           l-img-class="right-card" 
+           position="right" 
+           image="/images/3.png"
+    title="做一个热爱生活的人！">
+    <view class="content">
+      很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...
+    </view>
+  </l-card>
+
+  <l-card  type="primary" 
+           l-img-class="right-card" 
+           position="left" 
+           image="/images/3.png">
+    <view class="content">
+      很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子...
+    </view>
+  </l-card>
+  </l-tabpanel>
+  <l-tabpanel tab="品牌" key="two" slot="two">
+    <view class="tab-content">品牌</view>
+  </l-tabpanel>
+  <l-tabpanel tab="接口" key="three" slot="three">
+    <view class="tab-content">接口</view>
+  </l-tabpanel>
+  <l-tabpanel tab="面板" key="four" slot="four">
+    <view class="tab-content">面板</view>
+  </l-tabpanel>
+</l-tabs>

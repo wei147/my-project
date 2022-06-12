@@ -18,7 +18,7 @@
     <block wx:for="{{rightMenuList}}" wx:key="cat_id" wx:for-item="item1" wx:for-index="index1">
       <view class="section">{{item1.cat_name}}</view>
       <view class="itembox">
-        <navigator wx:for="{{item1.children}}" wx:key="cat_id" class="detail" wx:for-item="item2">
+        <navigator url="/pages/goods_list/index?cid={{item2.cat_id}}" wx:for="{{item1.children}}" wx:key="cat_id" class="detail" wx:for-item="item2" wx:for-index="index2">
           <image class="thumbnail" src="{{item2.cat_icon}}"></image>
           <view class="name">{{item2.cat_name}}</view>
         </navigator>

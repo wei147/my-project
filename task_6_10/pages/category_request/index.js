@@ -1,5 +1,9 @@
 // pages/category/category.js
 const cate = require("../../utils/cate.js")
+const ss = require('../../utils/time.js')
+import {
+  request
+} from "../../utils/request"
 
 Page({
 
@@ -7,8 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url: "https://api-hmugo-web.itheima.net/api/public/v1/categories",
-    catList: [],
+    // url: "https://api-hmugo-web.itheima.net/api/public/v1/categories",
     leftMenuList: [],
     rightMenuList: [],
 
@@ -17,37 +20,87 @@ Page({
     scrollPosition: 0
   },
 
+  catList: [],
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getcateList(this.data.url)
-    wx.showLoading({
-      title: '加载中...',
-    });
+    // 获取缓存数据
+    let cateList = wx.getStorageSync('cates')
+    // 判断有无数据
+    if (!cateList) {
+      this.getcateList();
+    } else {
+      // console.log((Date.now()));
+      console.log("发起请求时间："+ss.formatTime(Date.now(),'Y-M-D h:m:s'));
 
-    wx.hideLoading()
+      //判断时间是否过期
+      if (Date.now() - cateList.time > 1000 * 30) {
+        //重新调用
+        this.getcateList();
+      } else {
+        this.catList = cateList.data;
+        let leftMenuList = this.catList.map(v => v.cat_name);
+        let rightMenuList = this.catList[0].children;
+        this.setData({
+          // catList,
+          leftMenuList,
+          rightMenuList
+        })
+      }
+    }
+
+
+    // this.getcateList()
   },
 
   /**
    * 发请求获取接口数据
    */
-  getcateList(url) {
-    wx.request({
-      url: url,
-      success: (res) => {
-        console.log(res.data.message);
-        let catList = res.data.message
-        this.catList = res.data.message
-        let leftMenuList = this.catList.map(v => v.cat_name);
-        let rightMenuList = this.catList[0].children;
-        this.setData({
-          catList,
-          leftMenuList,
-          rightMenuList
-        })
-      }
+  getcateList() {
+    request({
+      url: "/categories"
+    }).then((res) => {
+      console.log(res.data.message);
+      this.catList = res.data.message
+      // 缓存
+      wx.setStorageSync('cates', {
+        time: Date.now(),
+        data: this.catList
+      });
+      let leftMenuList = this.catList.map(v => v.cat_name);
+      let rightMenuList = this.catList[0].children;
+      this.setData({
+        // catList,
+        leftMenuList,
+        rightMenuList
+      })
+
+    }).catch((err) => {
+      console.log(err);
     })
+    // wx.request({
+    //   url: "https://api-hmugo-web.itheima.net/api/public/v1/categories",
+    //   success: (res) => {
+    //     console.log(res.data.message);
+    //     this.catList = res.data.message
+    //     // 缓存
+    //     wx.setStorageSync('cates', {
+    //       time: Date.now(),
+    //       data: this.catList
+    //     });
+    //     let leftMenuList = this.catList.map(v => v.cat_name);
+    //     let rightMenuList = this.catList[0].children;
+    //     this.setData({
+    //       // catList,
+    //       leftMenuList,
+    //       rightMenuList
+    //     })
+    //   }
+    // })
   },
 
   /**
@@ -55,7 +108,9 @@ Page({
    */
   onTap: function (e) {
     console.log(e.currentTarget);
-    const{index} = e.currentTarget.dataset;
+    const {
+      index
+    } = e.currentTarget.dataset;
     let rightMenuList = this.catList[index].children
     wx.showLoading({
       title: '加载中...',
@@ -67,6 +122,10 @@ Page({
       scrollPosition: 0
     });
     wx.hideLoading()
+  },
+
+  getLocalTime: function (nS) {
+    return new Date(parseInt(nS) * 1000).tolocaleString().replace(/:\d{1,2}$/, ' ');
   },
 
   /**
