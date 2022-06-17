@@ -29,16 +29,16 @@ Page({
     cid: "",
     pagenum: 1,
     pagesize: 10
-
-
   },
+
+  totalPage: 1,
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     console.log(options);
     this.QueryParams.cid = options.cid;
-    console.log( this.QueryParams.cid);
+    console.log(this.QueryParams.cid);
     this.getGoodList();
 
   },
@@ -49,15 +49,23 @@ Page({
       data: this.QueryParams
     }).then(res => {
       console.log(res.data.message.goods);
+      //获取总条数
+      const total = res.total;
+      //计算总页数
+      this.totalPage = Math.ceil(total / this.options.pagesize);
+
       this.setData({
-        goods_list: res.data.message.goods
+        // goods_list: res.data.message.goods
+        goods_list:[...this.data.goods_list,...res.data.message.goods]
+
       })
     }).catch(err => {
       console.log(err);
     })
   },
 
-  handleTabsItemChange(e) {
+
+  handleItemTap(e) {
     const {
       index
     } = e.detail;
@@ -103,6 +111,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
+    this.setData({
+      goods_list: []
+    });
+    this.QueryParams.pagenum = 1;
+    this.getGoodList()
+
 
   },
 
@@ -110,6 +124,15 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
+    if (this.QueryParams.pagenum >= this.totalPage) {
+      wx.showToast({
+        title: '我是有底线的',
+        icon:"none"
+      })
+    }else{
+        this.QueryParams.pagenum++;
+        this.getGoodList();
+      }
 
   },
 

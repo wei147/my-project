@@ -1,1 +1,12 @@
-/* pages/goods_detail/index.wxss */
+.detail_swiper swiper{
+  height: 65vm;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+swpiper item{
+  
+}
+

@@ -1,4 +1,6 @@
-// pages/goods_detail/index.js
+import {
+  request
+} from "../../utils/request"
 Page({
 
   /**
@@ -6,15 +8,43 @@ Page({
    */
   data: {
 
+    goodsObj:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    const {goods_id} = options;
+    this.getGoodsdetail(goods_id)
+  },  
+
+
+  getGoodsdetail(goods_id){
+    request({url:"/goods/detail",data:{goods_id}})
+    .then(res=>{
+      console.log(res);
+      let {}= 
+      this.setData({
+        goodsObj:{
+          pics,goods_name,price,goods_introduce:replace(/\.webp/g.jpg)
+        }
+      })
+    }).catch(err=>{
+      console.log(err);
+    })
 
   },
 
+  
+  handlePreImg(){
+    console.log(e.currentTarget.dataset.url);
+
+    const current = e.currentTarget.dataset.url;
+
+    const urls = this.GoodsInfo.pics.map
+    
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

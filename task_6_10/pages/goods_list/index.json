@@ -2,5 +2,7 @@
   "usingComponents": {
     "Tabs":"../../components/Tabs/Tabs"
   },
-  "navigationBarTitleText": "商品列表搜索"
+  "navigationBarTitleText": "商品列表搜索",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

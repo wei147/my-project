@@ -3,7 +3,8 @@
 </view>
 
 <view>
-  <Tabs tabs="{{tabs}}" bindtapsItemChange="handleTabsItemChange">
+  <!-- <Tabs tabs="{{tabs}}" bindtapsItemChange="handleTabsItemChange"> -->
+  <Tabs tabs="{{tabs}}" bind:tabsItemChange="handleItemTap">
     <block wx:if="{{tabs[0].isActive}}">
       <view class="first_tab">
         <navigator wx:for="{{goods_list}}" wx:key="goods_id" class="goods_item" open-type="navigate">

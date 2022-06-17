@@ -16,7 +16,32 @@
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/goods_list/index",
+          "pathName": "pages/goods_list/index",
+          "query": "cid=8",
+          "scene": null
+        },
+        {
+          "name": "pages/goods_list/index",
+          "pathName": "pages/goods_list/index",
+          "query": "cid=8",
+          "scene": null
+        },
+        {
+          "name": "pages/category_request/index",
+          "pathName": "pages/category_request/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/goods_detail/index",
+          "pathName": "pages/goods_detail/index",
+          "query": "",
+          "scene": null
+        }
+      ]
     }
   }
 }
