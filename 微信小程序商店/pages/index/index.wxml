@@ -1,0 +1,37 @@
+<view>
+	<!-- 搜索框 -->
+	<search-input></search-input>
+
+	<!-- 轮播图 -->
+	<swiper indicator-dots autoplay interval="2000" circular indicator-color="white" indicator-active-color="red">
+		<swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+			<navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+				<image mode="widthFix" src="{{item.image_src}}" class="swiperImg"></image>
+			</navigator>
+		</swiper-item>
+	</swiper>
+
+	<!-- 分类导航 -->
+	<view class="cate">
+		<navigator url="/pages/category/category" open-type="switchTab" wx:for="{{cateList}}" wx:key="name"
+			class="cateItem">
+			<image mode="widthFix" src="{{item.image_src}}"></image>
+		</navigator>
+	</view>
+
+	<!-- 楼层商品 -->
+	<view class="floor">
+		<view class="floorGroup" wx:for="{{floorList}}" wx:key="id" wx:for-item="item1" wx:for-index="index">
+			<view class="floorTitle">
+				<image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+			</view>
+			<view class="floorList">
+				<view class="floorItem" bindtap="toGoodsList" data-url="{{item2.navigator_url}}" wx:for="{{item1.product_list}}" wx:key="name" wx:for-item="item2"
+					wx:for-index="index2">
+					<image class="{{index2 !== 0 ? 'floorItemImg':'firstImg'}}" src="{{item2.image_src}}">
+					</image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

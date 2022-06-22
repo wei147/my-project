@@ -1,0 +1,6 @@
+<view class="upImgWrap">
+	<image src="{{imgUrl}}" class="img" bindtap="previewImg"></image>
+	<icon type="clear" color="red" class="clearBtn" bindtap="clearImg"></icon>
+</view>
+
+

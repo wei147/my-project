@@ -1,0 +1,38 @@
+.goodsItem {
+	display: flex;
+	border-bottom: 2rpx solid #ccc;
+	padding: 20rpx 0;
+}
+
+.goodsImgWrap {
+	flex:2;
+	text-align: center;
+}
+
+.goodsImgWrap image {
+	width: 70%;
+}
+
+.goodsInfo {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.goodsName {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.goodsPrice {
+	color: var(--themeColor);
+	font-size: 30rpx;
+}
+
+.noDataImg {
+	width: 100%;
+	margin-top: 50rpx;
+}

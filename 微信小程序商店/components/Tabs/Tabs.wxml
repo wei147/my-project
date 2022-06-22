@@ -1,0 +1,12 @@
+<!-- tab标签栏 -->
+<view class="tabs">
+	<view class="tabItem {{currentIndex === index ? 'tabActive' : ''}}" wx:for="{{tabs}}" wx:key="id"
+		data-index="{{index}}" bindtap="changeTab">
+		{{item.value}}
+	</view>
+</view>
+
+<!-- tab标签页的内容 -->
+<view class="tabContent">
+	<slot></slot>
+</view>

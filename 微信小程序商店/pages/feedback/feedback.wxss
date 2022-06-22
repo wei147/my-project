@@ -1,0 +1,70 @@
+page {
+	background-color: #eee;
+}
+
+.fdMain {
+	padding: 20rpx;
+}
+
+.fdTips {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.fdTips text {
+	background-color: #fff;
+	width: 30%;
+	padding: 15rpx;
+	text-align: center;
+	margin-top: 20rpx;
+}
+
+.fdContent {
+	margin-top: 20rpx;
+	padding-bottom: 20rpx;
+	background-color: #fff;
+}
+
+.fdContent textarea {
+	padding: 10rpx 0 0 10rpx;
+}
+
+.fdTool {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.fdTool .addImgBtn {
+	width: 120rpx;
+	height: 120rpx;
+	margin: 0 10rpx 20rpx;
+	text-align: center;
+	line-height: 120rpx;
+	font-size: 60rpx;
+	background-color: #eee;
+}
+
+.upImgItem {
+	margin-right: 20rpx;
+	margin-bottom: 20rpx;
+}
+
+.formBtnWrap {
+	margin-top: 20rpx;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.formBtn {
+	background-color: rgb(244,82,62);
+	color: #fff;
+	width: 200rpx;
+	height: 80rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5rpx;
+}
+

@@ -1,0 +1,37 @@
+<view>
+	<!-- tab标签栏 -->
+	<tabs tabs="{{tabs}}" bindtabChange="tabChange">
+		<block wx:if="{{tabs[0].id === currentIndex}}">
+			<view class="fdMain">
+				<view class="fdTitle">问题的种类</view>
+				<view class="fdTips">
+					<text>功能建议</text>
+					<text>购买遇到问题</text>
+					<text>性能问题</text>
+					<text>其它</text>
+				</view>
+				<view class="fdContent">
+					<textarea placeholder="请描述您的问题" value="{{textValue}}" bindinput="handleTextInput"></textarea>
+					<view class="fdTool">
+						<view class="addImgBtn" bindtap="chooseImg">+</view>
+						<view class="upImgItem" wx:for="{{tempImgPath}}" wx:key="*this">
+							<up-img imgUrl="{{item}}" data-index="{{index}}" bindclearImg="clearImg" bindpreviewimg="previewImg"></up-img>
+						</view>
+					</view>
+
+				</view>
+
+				<view class="formBtnWrap">
+					<view class="formBtn" bindtap="handleSubmit">
+						<icon type="success_no_circle" color="white"></icon>
+						提交
+					</view>
+				</view>
+			</view>
+
+
+		</block>
+		<block wx:if="{{tabs[1].id === currentIndex}}"></block>
+	</tabs>
+
+</view>

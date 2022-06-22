@@ -1,0 +1,13 @@
+<!-- <view class="searchWrap">
+	<input value="{{query}}" type="text" bindinput="handleInput" placeholder="请输入商品名称" class="searchInput" />
+	<text class="searchBtn" bindtap="toSearch">搜索</text>
+</view>
+
+<view class="searchContent">
+
+	<navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="searchItem" wx:for="{{searchResult}}" wx:key="goods_id">
+		{{index + 1}}.{{ item.goods_name}}
+	</navigator>
+
+</view> -->
+<view >搜索页</view>

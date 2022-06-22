@@ -1,0 +1,79 @@
+<view>
+	<!-- 收获地址 -->
+	<view class="addressWrap">
+		<!-- 当收获地址不存在时才显示按钮 -->
+		<view class="addressBtn" wx:if="{{!address.userName}}">
+			<button bindtap="chooseAddress" type="primary" plain>获取收货地址</button>
+		</view>
+		<view class="addressInfo" wx:else>
+			<view class="userInfo">
+				<text>收货人：{{address.userName}}</text>
+				<!-- <text>收货人：李华</text>  -->
+				<view>{{addressDetail}}</view>
+			</view>
+			<view class="userPhone">{{address.telNumber}}</view>
+		</view>
+	</view>
+
+	<!-- 购物车内容 -->
+	<view wx:if="{{cartGoods.length > 0}}" class="cartContent">
+		<!-- <view class="cartTitle"></view> -->
+		<view class="cartMain">
+			<view class="cartItem" wx:for="{{cartGoods}}" wx:key="goods_id">
+				<!--是否选中商品 -->
+				<view class="cartCheckWrap">
+					<!-- 当checkbox的选中项发生变化时会触发checkbox-group的change事件 -->
+					<checkbox-group bindchange="selectOne" data-goods-id="{{item.goods_id}}">
+						<checkbox checked="{{item.checked}}" value="{{item.goods_id}}" color="#eb4450"></checkbox>
+					</checkbox-group>
+				</view>
+				<!-- 商品图片 -->
+				<navigator class="goodsImgWrap">
+					<image class="goodsImg" mode="widthFix" src="{{item.goods_small_logo}}"></image>
+				</navigator>
+				<!-- 商品信息 -->
+				<view class="goodsInfoWrap">
+					<view class="goodsName">{{item.goods_name}}</view>
+					<view class="goodsPriceWrap">
+						<view class="goodsPrice">{{item.goods_price}}</view>
+						<!-- 设置商品数量 -->
+						<view class="cartNumTool">
+							<view class="numEdit" data-goods-id="{{item.goods_id}}" data-num="{{-1}}" bindtap="changeNum">-</view>
+							<view class="goodsNum">{{item.num}}</view>
+							<view class="numEdit" data-goods-id="{{item.goods_id}}" data-num="{{1}}" bindtap="changeNum">+</view>
+						</view>
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>
+
+	<!-- 购物车为空时的占位图片 -->
+	<view wx:else class="cartEmptyWrap">
+		<image src="../../icons/cart-empty.gif" mode="widthFix" class="cartEmpty"></image>
+	</view>
+
+	<!-- 底部工具栏 -->
+	<view class="footerTool">
+		<!-- 全选按钮 -->
+		<view class="checkAllWrap">
+			<checkbox-group bindchange="selectAll">
+				<checkbox checked="{{isSelectAll}}"  color="#eb4450">全选</checkbox>
+			</checkbox-group>
+		</view>
+
+		<!-- 总价格 -->
+		<view class="totalPriceWrap">
+			<text>合计：</text>
+			<view class="totalPriceInfo">
+				<text class="totalPrice">￥{{totalPrice}}</text>
+				<view class="totalPriceTip">包含运费</view>
+			</view>
+		</view>
+
+		<!-- 结算 -->
+		<view class="payWrap" bindtap="toPay">结算({{totalNum}})</view>
+	</view>
+
+</view>

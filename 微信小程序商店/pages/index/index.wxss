@@ -1,0 +1,45 @@
+swiper {
+	height: 340rpx;
+}
+
+.swiperImg {
+	width: 100%;
+}
+
+.cate {
+	display: flex;
+}
+
+.cateItem {
+	flex: 1;
+	padding: 20rpx;
+}
+
+.cateItem image {
+	width: 100%;
+}
+
+.floorList {
+	overflow: hidden;
+}
+
+.floorItem {
+	float: left;
+	width: 33.3%;
+}
+
+.floorItem image {
+	width: 100%;
+}
+
+.firstImg {
+	height: 200px;
+}
+
+.floorItemImg {
+	height: 100px;
+	padding: 10rpx;
+}
+
+
+

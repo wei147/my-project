@@ -1,0 +1,91 @@
+<view>
+	<!-- 用户信息 -->
+	<view class="userInfoWrap">
+		<view class="noLoginWrap" wx:if="{{!userInfo.nickName}}">
+			<image bindtap="getUserProfile" mode="widthFix" src="../../icons/no-login.png" class="noLoginImg">
+			</image>
+			<text>点击头像登录</text>
+		</view>
+
+		<view class="alreadyLoginWrap" wx:else>
+			<!-- <image mode="aspectFill" src="{{userInfo.avatarUrl}}" class="userBgc"></image> -->
+							<!-- 自定义背景 -->
+			<image mode="widthFix" class="userBgc" src="{{bg_img}}"></image>
+			<view class="userInfoShow">
+				<image mode="widthFix" src="{{userInfo.avatarUrl}}" class="userAvatar"></image>
+				<view class="nickName">{{userInfo.nickName}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 功能列表 -->
+	<view class="userContent">
+		<view class="userMain">
+
+			<!-- 历史足迹 -->
+			<!-- <view class="historyWrap">
+				<navigator>
+					<view class="historyNum">0</view>
+					<view class="historyText">收藏的店铺</view>
+				</navigator>
+				<navigator url="/pages/collect/collect">
+					<view class="historyNum">{{collectGoods.length}}</view>
+					<view class="historyText">收藏的商品</view>
+				</navigator>
+				<navigator>
+					<view class="historyNum">0</view>
+					<view class="historyText">关注的商品</view>
+				</navigator>
+				<navigator>
+					<view class="historyNum">0</view>
+					<view class="historyText">我的足迹</view>
+				</navigator>
+			</view> -->
+
+			<!-- 我的订单 -->
+			<!-- <view class="orderWrap">
+				<view class="orderTitle">我的订单</view>
+				<view class="orderContent">
+					<navigator>
+						<view class="iconfont icon-danju"></view>
+						<view>全部订单</view>
+					</navigator>
+					<navigator>
+						<view class="iconfont icon-fu-kuan"></view>
+						<view>待付款</view>
+					</navigator>
+					<navigator>
+						<view class="iconfont icon-receivingaddress"></view>
+						<view>待收货</view>
+					</navigator>
+					<navigator>
+						<view class="iconfont icon-shouhou"></view>
+						<view>退款/退货</view>
+					</navigator>
+				</view>
+			</view> -->
+
+			<!-- 收货地址管理 -->
+			<view class="addressWrap" bindtap="changeBG">点击更换背景</view>
+			<!-- for 作业 临时添加 -->
+			<view class="appInfoWrap">
+				<navigator class="appItem">我的收藏</navigator>
+				<navigator url="/pages/"><view class="appItem">我的订单</view></navigator>
+			</view>
+
+			<!-- 应用信息相关 -->
+			<view class="appInfoWrap">
+				<view class="appItem kefu">
+					<text>联系客服</text>
+					<text>call 10086</text>
+				</view>
+				<navigator url="/pages/feedback/feedback" class="appItem">意见反馈</navigator>
+				<view class="appItem">关于我们</view>
+			</view>
+
+			<view class="exit" bindtap="exit"><text>退出登录</text></view>
+
+		</view>
+	</view>
+
+</view>

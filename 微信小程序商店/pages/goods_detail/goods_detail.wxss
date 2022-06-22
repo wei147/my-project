@@ -1,0 +1,105 @@
+page {
+	padding-bottom: 100rpx;
+}
+
+swiper {
+	/* 
+	图片的宽高比是1:1 
+	设置了图片的宽度是屏幕宽度的60%
+	这里也设置swiper的高度是60vw，即屏幕宽度的60%，正好和图片的宽度对应，能够完整的显示出图片
+	*/
+	height: 60vw;
+	text-align: center;
+}
+
+.swiperImg {
+	width: 60%;
+}
+
+.goodsPrice {
+	color: var(--themeColor);
+	font-size: 36rpx;
+	font-weight: bold;
+	padding: 15rpx;
+}
+
+.goodsNameRow {
+	display: flex;
+}
+
+.goodsName {
+	flex: 5;
+	font-size: 30rpx;
+	padding: 0 10rpx;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.goodsCollect {
+	flex: 1;
+	text-align: center;
+	border-left: 5rpx solid #ccc;
+}
+
+.icon-collect {
+	color: var(--themeColor);
+}
+
+.goodsInfoTitle {
+	color: var(--themeColor);
+	font-size: 32rpx;
+	font-weight: bold;
+	padding: 20rpx;
+}
+
+/* 使用fixed定位，相对于窗口 */
+.bottomBar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	background-color: #fff;
+	width: 100%;
+	height: 100rpx;
+	border-top: 1rpx solid #ccc;
+}
+
+.barItem {
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 26rpx;
+}
+
+.barItem .iconfont {
+	margin-bottom: 10rpx;
+}
+
+.barItem button {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.addCart,
+.buyBtn {
+	flex: 2;
+	color: white;
+	font-size: 32rpx;
+}
+
+.addCart {
+	background-color: rgb(255, 164, 0);
+}
+
+.buyBtn {
+	background-color: var(--themeColor);
+}

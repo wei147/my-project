@@ -1,0 +1,137 @@
+page {
+	/* 因为底部工具栏是fixed绝对定位，让页面的padding-bottom等于工具栏高度防止挡住页面内容 */
+	padding-bottom: 100rpx;
+}
+
+.addressWrap {
+	border-bottom: 2rpx solid var(--themeColor);
+	padding-bottom: 20rpx;
+}
+
+.addressBtn {
+	margin-top: 20rpx;
+}
+
+.addressInfo {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 20rpx;
+	margin-top: 20rpx;
+}
+
+.cartEmptyWrap {
+	text-align: center;
+}
+
+.cartEmpty {
+	width: 60%;
+	margin-top: 100rpx;
+}
+
+.cartContent {
+	padding-top: 15rpx;
+}
+
+.cartItem {
+	display: flex;
+	padding: 10rpx;
+}
+
+.cartCheckWrap {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.goodsImgWrap {
+	flex: 2;
+}
+
+.goodsImgWrap image {
+	width: 100%;
+}
+
+.goodsInfoWrap {
+	flex: 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 10rpx;
+}
+
+.goodsName {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	/* 允许单词内换行 */
+	word-break: break-all;
+}
+
+.goodsPriceWrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.goodsPrice {
+	color: var(--themeColor);
+}
+
+.cartNumTool {
+	display: flex;
+}
+
+.numEdit {
+	padding: 0 15rpx;
+	border: 1rpx solid #ccc;
+}
+
+.goodsNum {
+	margin: 0 20rpx;
+}
+
+/* 底部工具栏 */
+.footerTool {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+	display:flex;
+	border-top: 1rpx solid #ccc;
+	width: 100%;
+	height: 100rpx;
+	padding: 10rpx 0;
+}
+
+.checkAllWrap {
+	flex: 2;
+	padding-left: 10rpx;
+	display: flex;
+	align-items: center;
+}
+
+.totalPriceWrap {
+	flex: 5;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 10rpx;
+}
+
+.totalPrice {
+	color: var(--themeColor);
+	font-size: 32rpx;
+}
+
+.totalPriceTip {
+	font-size: 26rpx;
+	text-align: right;
+}
+
+.payWrap {
+	flex:2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: var(--themeColor);
+}

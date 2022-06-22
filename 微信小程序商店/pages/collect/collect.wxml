@@ -1,0 +1,30 @@
+<view>
+	<!-- tab标签栏 -->
+	<view>
+		<tabs tabs="{{tabs}}" bindtabChange="tabChange">
+			<block wx:if="{{tabs[0].id === currentIndex}}">
+				<navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="goodsItem"
+					wx:for="{{collectGoods}}" wx:key="goods_id">
+					<view class="goodsImgWrap">
+						<image mode="widthFix"
+							src="{{item.goods_small_logo ? item.goods_small_logo : '../../icons/no-img.png'}}">
+						</image>
+					</view>
+					<view class="goodsInfo">
+						<view class="goodsName">{{item.goods_name}}</view>
+						<view class="goodsPrice">￥{{item.goods_price}}</view>
+					</view>
+				</navigator>
+			</block>
+			<block wx:if="{{tabs[1].id === currentIndex}}">
+				<image mode="widthFix" src="../../icons/no-data.gif" class="noDataImg"></image>
+			</block>
+			<block wx:if="{{tabs[2].id === currentIndex}}">
+				<image mode="widthFix" src="../../icons/no-data.gif" class="noDataImg"></image>
+			</block>
+			<block wx:if="{{tabs[3].id === currentIndex}}">
+				<image mode="widthFix" src="../../icons/no-data.gif" class="noDataImg"></image>
+			</block>
+		</tabs>
+	</view>
+</view>

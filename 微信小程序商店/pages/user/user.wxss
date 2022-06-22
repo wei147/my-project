@@ -1,0 +1,134 @@
+page {
+	background-color: #edece8;
+}
+
+/* 头部用户信息 */
+.noLoginWrap {
+	height: 400rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.noLoginImg {
+	width: 140rpx;
+	margin-right: 20rpx;
+}
+
+.alreadyLoginWrap {
+	height: 400rpx;
+	position: relative;
+}
+
+.userBgc {
+	filter: blur(0.2px);
+	/* filter: blur(4px); */
+	width: 100%;
+	/* height: 460rpx; */
+}
+
+.userInfoShow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+}
+
+.userAvatar {
+	width: 160rpx;
+	border-radius: 100%;
+	margin-bottom: 50rpx;
+}
+
+.nickName {
+	color: white;
+	font-size: 34rpx;
+}
+
+/* 功能列表 */
+.userContent {
+	position: relative;
+}
+
+.userMain {
+	position: absolute;
+	top: -40rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 90%;
+	padding-bottom: 40rpx;
+}
+
+/* 历史足迹 */
+.historyWrap,
+.orderContent {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	padding: 10rpx;
+	background-color: #fff;
+}
+
+.historyNum {
+	color: var(--themeColor);
+	font-size: 32rpx;
+}
+
+.historyText {
+	font-size: 27rpx;
+}
+
+.orderWrap,
+.appInfoWrap,
+/* .recommend, */
+.addressWrap {
+	margin-top: 20rpx;
+	background-color: #fff;
+}
+
+.orderTitle {
+	padding: 20rpx;
+	border-bottom: 1rpx solid #ccc;
+}
+
+.orderContent .iconfont {
+	color: var(--themeColor);
+	font-size: 40rpx;
+}
+
+.addressWrap,
+/* .exit, */
+.appItem {
+	height: 80rpx;
+	padding: 20rpx;
+}
+
+.appItem {
+	border-bottom: 1rpx solid #ccc;
+}
+
+.appItem:last-child {
+	border: none;
+}
+
+.kefu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.exit{
+		margin-top: 20rpx;
+		background-color: rgb(255, 107, 107) ;
+		border-radius: 4px;
+		/* opacity: 0.5; */
+		height: 80rpx;
+		padding: 20rpx;
+		display: flex;
+		text-align: center;
+		justify-content: center;
+}
+.exit text{
+	color: white;
+	font-weight: 600;
+}
